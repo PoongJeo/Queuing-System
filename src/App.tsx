@@ -1,21 +1,27 @@
 import React from 'react';
+import logo from './logo.svg';
 import './App.css';
+import { Login } from './component/Login';
+import './Util/css/style.css';
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import routes from './config/routes';
+import MainRoutes from './config/routes';
 
-import Login from "./component/login"
-import { Routes, BrowserRouter as Router, Route, BrowserRouter } from 'react-router-dom';
 
 function App() {
-  
-
   return (
-    <div className="App" >
-                      
-      <BrowserRouter>
-        <Routes>       
-          <Route path='/' element ={<Login/>}/>
-         
-        </Routes>
-      </BrowserRouter>
+    <div className="App">
+      {/* <BrowserRouter>
+        <Switch>
+          {routes.map((route, index)=> {
+            return (
+              <Route key={index} path={route.path} component={route.component} exact={route.exact}/>
+            )
+          })}
+        </Switch>
+      </BrowserRouter> */}
+      <MainRoutes/>
+
     </div>
   );
 }
